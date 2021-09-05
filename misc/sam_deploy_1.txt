@@ -1,0 +1,58 @@
+Buildfile: /home/sam/eclipse-workspace/wildstang/build.xml
+Trying to override old definition of task classloader
+get-target-ip:
+     [echo] Finding roboRIO...
+[find-roborio] could not resolve roboRIO-111-FRC.lan
+[find-roborio] resolved roboRIO-111-FRC.local to 10.1.11.2
+[find-roborio] could not get IP from DS
+[find-roborio] trying 10.1.11.2
+[find-roborio] trying 10.1.11.2
+[find-roborio] trying 172.22.11.2
+[find-roborio] Could not connect to 172.22.11.2
+     [echo] roboRIO found at 10.1.11.2, image FRC_roboRIO_2018_v16
+dependencies:
+     [echo] roboRIO image version validated
+deploy:
+   [webdav] getting http://10.1.11.2/files/usr/local/frc/lib/WPI_Native_Libraries.properties
+     [echo] Deploying libraries 
+     [echo]  libcscore.so,libntcore.so,libopencv_calib3d.so.3.2,libopencv_core.so.3.2,libopencv_features2d.so.3.2,libopencv_flann.so.3.2,libopencv_highgui.so.3.2,libopencv_imgcodecs.so.3.2,libopencv_imgproc.so.3.2,libopencv_java320.so,libopencv_ml.so.3.2,libopencv_objdetect.so.3.2,libopencv_photo.so.3.2,libopencv_shape.so.3.2,libopencv_stitching.so.3.2,libopencv_superres.so.3.2,libopencv_video.so.3.2,libopencv_videoio.so.3.2,libopencv_videostab.so.3.2,libwpiHal.so,libwpilibc.so,libwpiutil.so
+   [webdav] putting /home/sam/wpilib/common/current/lib/linux/athena/shared/libcscore.so to http://10.1.11.2/files/tmp/libcscore.so
+   [webdav] putting /home/sam/wpilib/common/current/lib/linux/athena/shared/libntcore.so to http://10.1.11.2/files/tmp/libntcore.so
+   [webdav] putting /home/sam/wpilib/common/current/lib/linux/athena/shared/libopencv_calib3d.so.3.2 to http://10.1.11.2/files/tmp/libopencv_calib3d.so.3.2
+   [webdav] putting /home/sam/wpilib/common/current/lib/linux/athena/shared/libopencv_core.so.3.2 to http://10.1.11.2/files/tmp/libopencv_core.so.3.2
+   [webdav] putting /home/sam/wpilib/common/current/lib/linux/athena/shared/libopencv_features2d.so.3.2 to http://10.1.11.2/files/tmp/libopencv_features2d.so.3.2
+   [webdav] putting /home/sam/wpilib/common/current/lib/linux/athena/shared/libopencv_flann.so.3.2 to http://10.1.11.2/files/tmp/libopencv_flann.so.3.2
+   [webdav] putting /home/sam/wpilib/common/current/lib/linux/athena/shared/libopencv_highgui.so.3.2 to http://10.1.11.2/files/tmp/libopencv_highgui.so.3.2
+   [webdav] putting /home/sam/wpilib/common/current/lib/linux/athena/shared/libopencv_imgcodecs.so.3.2 to http://10.1.11.2/files/tmp/libopencv_imgcodecs.so.3.2
+   [webdav] putting /home/sam/wpilib/common/current/lib/linux/athena/shared/libopencv_imgproc.so.3.2 to http://10.1.11.2/files/tmp/libopencv_imgproc.so.3.2
+   [webdav] putting /home/sam/wpilib/common/current/lib/linux/athena/shared/libopencv_java320.so to http://10.1.11.2/files/tmp/libopencv_java320.so
+   [webdav] putting /home/sam/wpilib/common/current/lib/linux/athena/shared/libopencv_ml.so.3.2 to http://10.1.11.2/files/tmp/libopencv_ml.so.3.2
+   [webdav] putting /home/sam/wpilib/common/current/lib/linux/athena/shared/libopencv_objdetect.so.3.2 to http://10.1.11.2/files/tmp/libopencv_objdetect.so.3.2
+   [webdav] putting /home/sam/wpilib/common/current/lib/linux/athena/shared/libopencv_photo.so.3.2 to http://10.1.11.2/files/tmp/libopencv_photo.so.3.2
+   [webdav] putting /home/sam/wpilib/common/current/lib/linux/athena/shared/libopencv_shape.so.3.2 to http://10.1.11.2/files/tmp/libopencv_shape.so.3.2
+   [webdav] putting /home/sam/wpilib/common/current/lib/linux/athena/shared/libopencv_stitching.so.3.2 to http://10.1.11.2/files/tmp/libopencv_stitching.so.3.2
+   [webdav] putting /home/sam/wpilib/common/current/lib/linux/athena/shared/libopencv_superres.so.3.2 to http://10.1.11.2/files/tmp/libopencv_superres.so.3.2
+   [webdav] putting /home/sam/wpilib/common/current/lib/linux/athena/shared/libopencv_video.so.3.2 to http://10.1.11.2/files/tmp/libopencv_video.so.3.2
+   [webdav] putting /home/sam/wpilib/common/current/lib/linux/athena/shared/libopencv_videoio.so.3.2 to http://10.1.11.2/files/tmp/libopencv_videoio.so.3.2
+   [webdav] putting /home/sam/wpilib/common/current/lib/linux/athena/shared/libopencv_videostab.so.3.2 to http://10.1.11.2/files/tmp/libopencv_videostab.so.3.2
+   [webdav] putting /home/sam/wpilib/common/current/lib/linux/athena/shared/libwpiHal.so to http://10.1.11.2/files/tmp/libwpiHal.so
+   [webdav] putting /home/sam/wpilib/common/current/lib/linux/athena/shared/libwpilibc.so to http://10.1.11.2/files/tmp/libwpilibc.so
+   [webdav] putting /home/sam/wpilib/common/current/lib/linux/athena/shared/libwpiutil.so to http://10.1.11.2/files/tmp/libwpiutil.so
+   [webdav] putting /home/sam/wpilib/common/current/lib/linux/athena/shared/WPI_Native_Libraries.properties to http://10.1.11.2/files/tmp/WPI_Native_Libraries.properties
+  [sshexec] Connecting to 10.1.11.2:22
+  [sshexec] cmd : sed -i -e 's/^StartupDLLs/;StartupDLLs/' /etc/natinst/share/ni-rt.ini; chmod +x /tmp/libcscore.so /tmp/libntcore.so /tmp/libopencv_calib3d.so.3.2 /tmp/libopencv_core.so.3.2 /tmp/libopencv_features2d.so.3.2 /tmp/libopencv_flann.so.3.2 /tmp/libopencv_highgui.so.3.2 /tmp/libopencv_imgcodecs.so.3.2 /tmp/libopencv_imgproc.so.3.2 /tmp/libopencv_java320.so /tmp/libopencv_ml.so.3.2 /tmp/libopencv_objdetect.so.3.2 /tmp/libopencv_photo.so.3.2 /tmp/libopencv_shape.so.3.2 /tmp/libopencv_stitching.so.3.2 /tmp/libopencv_superres.so.3.2 /tmp/libopencv_video.so.3.2 /tmp/libopencv_videoio.so.3.2 /tmp/libopencv_videostab.so.3.2 /tmp/libwpiHal.so /tmp/libwpilibc.so /tmp/libwpiutil.so && mv /tmp/libcscore.so /tmp/libntcore.so /tmp/libopencv_calib3d.so.3.2 /tmp/libopencv_core.so.3.2 /tmp/libopencv_features2d.so.3.2 /tmp/libopencv_flann.so.3.2 /tmp/libopencv_highgui.so.3.2 /tmp/libopencv_imgcodecs.so.3.2 /tmp/libopencv_imgproc.so.3.2 /tmp/libopencv_java320.so /tmp/libopencv_ml.so.3.2 /tmp/libopencv_objdetect.so.3.2 /tmp/libopencv_photo.so.3.2 /tmp/libopencv_shape.so.3.2 /tmp/libopencv_stitching.so.3.2 /tmp/libopencv_superres.so.3.2 /tmp/libopencv_video.so.3.2 /tmp/libopencv_videoio.so.3.2 /tmp/libopencv_videostab.so.3.2 /tmp/libwpiHal.so /tmp/libwpilibc.so /tmp/libwpiutil.so /tmp/WPI_Native_Libraries.properties /usr/local/frc/lib && ldconfig
+   [webdav] getting http://10.1.11.2/files/usr/local/frc/lib/User_Libraries.properties
+   [delete] Deleting: /home/sam/wpilib/user/cpp/lib/User_Libraries.properties
+  [sshexec] Connecting to 10.1.11.2:22
+  [sshexec] cmd : rm -f /home/lvuser/FRCUserProgram
+     [echo] [athena-deploy] Copying code over.
+   [webdav] deleting http://10.1.11.2/files/home/lvuser/FRCUserProgram
+   [webdav] putting /home/sam/eclipse-workspace/wildstang/Debug/FRCUserProgram to http://10.1.11.2/files/home/lvuser/FRCUserProgram
+   [webdav] deleting http://10.1.11.2/files/home/lvuser/robotCommand
+   [webdav] putting /home/sam/wpilib/cpp/current/ant/robotCommand to http://10.1.11.2/files/home/lvuser/robotCommand
+     [echo] [athena-deploy] Starting program.
+  [sshexec] Connecting to 10.1.11.2:22
+  [sshexec] cmd : . /etc/profile.d/natinst-path.sh; chown lvuser /home/lvuser/FRCUserProgram; setcap 'cap_sys_nice=pe' /home/lvuser/FRCUserProgram; chmod a+x /home/lvuser/FRCUserProgram; /usr/local/frc/bin/frcKillRobot.sh -t -r; sync
+BUILD SUCCESSFUL
+Total time: 26 seconds
+

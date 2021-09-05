@@ -1,0 +1,8 @@
+redirect logger errors to the net terminal if they are in a network thread.
+generic probing system
+smart dashboard framework
+logging app
+config app
+probe app
+autonomous app
+autonomous flow control

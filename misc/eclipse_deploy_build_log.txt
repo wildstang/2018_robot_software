@@ -1,0 +1,28 @@
+Buildfile: C:\Wildstang\PowerUpWorkspace\2018_Robot_Deploy\build.xml
+Trying to override old definition of task classloader
+get-target-ip:
+     [echo] Finding roboRIO...
+[find-roborio] could not resolve roboRIO-111-FRC.frc-field.local
+[find-roborio] could not resolve roboRIO-111-FRC.lan
+[find-roborio] trying 172.22.11.2
+[find-roborio] trying 10.1.11.2
+[find-roborio] DS provided 172.22.11.2
+[find-roborio] trying 172.22.11.2
+     [echo] roboRIO found at 172.22.11.2, image FRC_roboRIO_2018_v16
+dependencies:
+     [echo] roboRIO image version validated
+deploy:
+   [webdav] getting http://172.22.11.2/files/usr/local/frc/lib/WPI_Native_Libraries.properties
+   [webdav] getting http://172.22.11.2/files/usr/local/frc/lib/User_Libraries.properties
+  [sshexec] Connecting to 172.22.11.2:22
+  [sshexec] cmd : rm -f /home/lvuser/FRCUserProgram
+     [echo] [athena-deploy] Copying code over.
+   [webdav] deleting http://172.22.11.2/files/home/lvuser/FRCUserProgram
+   [webdav] putting C:\Wildstang\PowerUpWorkspace\2018_Robot_Deploy\Debug\FRCUserProgram to http://172.22.11.2/files/home/lvuser/FRCUserProgram
+   [webdav] deleting http://172.22.11.2/files/home/lvuser/robotCommand
+   [webdav] putting C:\Users\Wallace\wpilib\cpp\current\ant\robotCommand to http://172.22.11.2/files/home/lvuser/robotCommand
+     [echo] [athena-deploy] Starting program.
+  [sshexec] Connecting to 172.22.11.2:22
+  [sshexec] cmd : . /etc/profile.d/natinst-path.sh; chown lvuser /home/lvuser/FRCUserProgram; setcap 'cap_sys_nice=pe' /home/lvuser/FRCUserProgram; chmod a+x /home/lvuser/FRCUserProgram; /usr/local/frc/bin/frcKillRobot.sh -t -r; sync
+BUILD SUCCESSFUL
+Total time: 9 seconds

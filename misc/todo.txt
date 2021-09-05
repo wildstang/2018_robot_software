@@ -1,0 +1,5 @@
+reset in smart output gets to be 177 in simulator, etc.
+figure out the oscillation in the turns.
+experiment with more p less d
+reverse shoot arm position
+

@@ -1,0 +1,86 @@
+LiftStep position( &auto_lift_pos_carry );
+ArmStep position( &auto_arm_pos_carry );
+ClawStep position( &auto_claw_pos_closed ) direction( &auto_claw_direction_neutral );
+
+DriveStep speed( .8 ) inches( 15 );
+TurnStep speed( .8 ) angle( 25 );
+
+@AutoParallelStepGroup
+{
+    DriveStep speed( .8 ) inches( 86.5 ) timeout( 3.0 );
+    LiftStep position( &auto_lift_pos_switch );
+    ArmStep position( &auto_arm_pos_score_switch );
+}
+
+ClawStep position( &auto_claw_pos_closed ) direction( &auto_claw_direction_rev_slowest );
+AutoStepDelay milliseconds( 350 );
+ClawStep position( &auto_claw_pos_ragdoll ) direction( &auto_claw_direction_neutral );
+
+TurnStep speed( .8 ) angle( -25 );
+
+@AutoParallelStepGroup
+{
+    DriveStep speed( .8 ) inches( -35 );
+
+    @AutoSerialStepGroup
+    {
+        AutoStepDelay milliseconds( 200 );
+        LiftStep position( &auto_lift_pos_carry );
+        ArmStep position( &auto_arm_pos_carry );
+    }
+}
+
+LiftFinishedStep state( &target_type_in_range );
+
+TurnStep speed( .8 ) angle( -58.3 );
+
+LiftStep position( &auto_lift_pos_intake );
+ArmStep position( &auto_arm_pos_intake );
+
+@AutoParallelStepGroup
+{
+    IntakeCubeStep;
+
+    @AutoSerialStepGroup
+    {
+        DriveStep speed( .8 ) inches( 21.4 );
+        ClawStep position( &auto_claw_pos_closed ) direction( &auto_claw_direction_fwd );
+        AutoStepDelay milliseconds( 100 );
+        ClawStep position( &auto_claw_pos_open ) direction( &auto_claw_direction_fwd );
+        AutoStepDelay milliseconds( 100 );
+        ClawStep position( &auto_claw_pos_closed ) direction( &auto_claw_direction_fwd );
+    }
+}
+
+AutoStepDelay milliseconds( 100 );
+
+ClawStep position( &auto_claw_pos_closed ) direction( &auto_claw_direction_neutral );
+
+DriveStep speed( .8 ) inches( -21.4 );
+
+LiftStep position( &auto_lift_pos_carry );
+ArmStep position( &auto_arm_pos_carry );
+
+TurnStep speed( .8 ) angle( 58.3 );
+
+LiftStep position( &auto_lift_pos_switch );
+ArmStep position( &auto_arm_pos_score_switch );
+DriveStep speed( .8 ) inches( 35.0 );
+
+ClawStep position( &auto_claw_pos_closed ) direction( &auto_claw_direction_rev_slowest );
+AutoStepDelay milliseconds( 350 );
+ClawStep position( &auto_claw_pos_ragdoll ) direction( &auto_claw_direction_neutral );
+
+@AutoParallelStepGroup
+{
+    DriveStep speed( .8 ) inches( -35 );
+
+    @AutoSerialStepGroup
+    {
+        AutoStepDelay milliseconds( 500 );
+        LiftStep position( &auto_lift_pos_carry );
+        ArmStep position( &auto_arm_pos_carry );
+    }
+}
+
+AutoStepStopAutonomous;

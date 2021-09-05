@@ -1,0 +1,68 @@
+LiftStep position( &auto_lift_pos_carry );
+ArmStep position( &auto_arm_pos_carry );
+ClawStep direction( &auto_claw_direction_neutral ) position( &auto_claw_pos_closed );
+
+DriveStep speed( 1.0 ) inches( -262 );
+
+@AutoParallelStepGroup
+{
+    @AutoSerialStepGroup
+    {
+        AutoStepDelay milliseconds( 200 );
+        ManipulatorStep position( &auto_shoot_scale_reverse );
+    }
+
+    @AutoSerialStepGroup
+    {
+        TurnStep speed( 0.8 ) angle( 50 );
+        TurnStep speed( 0.8 ) angle( 0.0 );
+    }
+}
+
+LiftFinishedStep state( &target_type_in_range );
+AutoStepDelay milliseconds( 200 );
+
+ClawStep position( &auto_claw_pos_closed ) direction( &auto_claw_direction_rev_balls_to_wall );
+AutoStepDelay milliseconds( 350 );
+ClawStep position( &auto_claw_pos_ragdoll ) direction( &auto_claw_direction_fwd );
+
+ManipulatorStep position( &auto_intake );
+AutoStepDelay milliseconds( 400 );
+
+TurnStep speed( 0.8 ) angle( -80.4 );
+TurnStep speed( 0.8 ) angle( 0.0 );
+AutoStepDelay milliseconds( 100 );
+
+@AutoParallelStepGroup
+{
+    IntakeCubeStep;
+
+    @AutoSerialStepGroup
+    {
+        DriveStep inches( 73 ) speed( 0.8 ) timeout( 2.0 );
+        ClawStep position( &auto_claw_pos_closed ) direction( &auto_claw_direction_fwd );
+        AutoStepDelay milliseconds( 100 );
+        ClawStep position( &auto_claw_pos_open ) direction( &auto_claw_direction_fwd );
+        AutoStepDelay milliseconds( 100 );
+        ClawStep position( &auto_claw_pos_closed ) direction( &auto_claw_direction_fwd );
+    }
+}
+
+AutoStepDelay milliseconds( 100 );
+
+ClawStep position( &auto_claw_pos_closed ) direction( &auto_claw_direction_neutral );
+
+DriveStep speed( 1.0 ) inches( -12 ) timeout( 0.5 );
+ManipulatorStep position( &auto_switch );
+AutoStepDelay milliseconds( 500 );
+
+DriveStep speed( 1.0 ) inches( 18 ) timeout( 0.5 );
+
+ClawStep position( &auto_claw_pos_closed ) direction( &auto_claw_direction_rev_slower );
+AutoStepDelay milliseconds( 350 );
+ClawStep position( &auto_claw_pos_ragdoll ) direction( &auto_claw_direction_neutral );
+
+ManipulatorStep position( &auto_carry );
+
+AutoStepStopAutonomous;
+

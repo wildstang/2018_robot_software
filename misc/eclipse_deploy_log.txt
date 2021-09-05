@@ -1,0 +1,562 @@
+Buildfile: /home/sam/eclipse-workspace/test-cpp-port/build.xml
+Trying to override old definition of task classloader
+get-target-ip:
+     [echo] Finding roboRIO, please ignore any [hostinfo] error messages
+     [echo] Trying mDNS: roboRIO-111-FRC.local
+     [echo] Trying USB: 172.22.11.2
+     [echo] Resolved mDNS to 10.1.11.2
+     [echo] Trying DNS: roboRIO-111-FRC.lan
+     [echo] Trying mDNS: roboRIO-111-FRC.frc-robot.local
+     [echo] roboRIO found at 10.1.11.2
+dependencies:
+     [echo] Trying Static Ethernet: 10.1.11.2
+ [hostinfo] Error retrieving remote host information for host:roboRIO-111-FRC.lan.
+     [echo] roboRIO image version validated
+deploy:
+      [scp] Connecting to 10.1.11.2:22
+      [scp] Receiving file: /usr/local/frc/lib/WPI_Native_Libraries.properties
+      [scp] Receiving: WPI_Native_Libraries.properties : 15771
+      [scp] File transfer time: 0.01 Average Rate: 1,433,727.27 B/s
+      [scp] done
+     [echo] Deploying libraries
+     [echo]  libHALAthena.so,libcscore.so,libntcore.so,libopencv_calib3d.so.3.1,libopencv_core.so.3.1,libopencv_features2d.so.3.1,libopencv_flann.so.3.1,libopencv_highgui.so.3.1,libopencv_imgcodecs.so.3.1,libopencv_imgproc.so.3.1,libopencv_ml.so.3.1,libopencv_objdetect.so.3.1,libopencv_photo.so.3.1,libopencv_shape.so.3.1,libopencv_stitching.so.3.1,libopencv_superres.so.3.1,libopencv_video.so.3.1,libopencv_videoio.so.3.1,libopencv_videostab.so.3.1,libwpilibc.so,libwpiutil.so
+      [scp] Connecting to 10.1.11.2:22
+      [scp] done.
+  [sshexec] Connecting to 10.1.11.2:22
+  [sshexec] cmd : chmod -R +x /usr/local/frc/lib
+ [hostinfo] Error retrieving remote host information for host:roboRIO-111-FRC.frc-robot.local.
+      [scp] Connecting to 10.1.11.2:22
+      [scp] Receiving file: /usr/local/frc/lib/User_Libraries.properties
+      [scp] Receiving: User_Libraries.properties : 629
+      [scp] File transfer time: 0.0 Average Rate: ∞ B/s
+      [scp] done
+  [sshexec] Connecting to 10.1.11.2:22
+  [sshexec] cmd : rm -f /home/lvuser/FRCUserProgram
+  [sshexec] Connecting to 10.1.11.2:22
+  [sshexec] cmd : ldconfig
+     [echo] [athena-deploy] Copying code over.
+      [scp] Connecting to 10.1.11.2:22
+      [scp] done.
+  [sshexec] Connecting to 10.1.11.2:22
+  [sshexec] cmd : killall -q netconsole-host || :
+      [scp] Connecting to 10.1.11.2:22
+      [scp] Receiving file: /usr/local/frc/bin/netconsole-host.properties
+      [scp] Receiving: netconsole-host.properties : 530
+      [scp] File transfer time: 0.0 Average Rate: 530,000.0 B/s
+      [scp] done
+     [echo] Deploying libraries
+     [echo]  netconsole-host
+      [scp] Connecting to 10.1.11.2:22
+      [scp] done.
+  [sshexec] Connecting to 10.1.11.2:22
+  [sshexec] cmd : chmod -R +x /usr/local/frc/bin
+      [scp] Connecting to 10.1.11.2:22
+      [scp] done.
+     [echo] [athena-deploy] Giving program CAP_SYS_NICE capability.
+  [sshexec] Connecting to 10.1.11.2:22
+  [sshexec] cmd : setcap 'cap_sys_nice=pe' /home/lvuser/FRCUserProgram
+     [echo] [athena-deploy] Starting program.
+  [sshexec] Connecting to 10.1.11.2:22
+  [sshexec] cmd : . /etc/profile.d/natinst-path.sh; chmod a+x /home/lvuser/FRCUserProgram; /usr/local/frc/bin/frcKillRobot.sh -t -r;
+  [sshexec] Connecting to 10.1.11.2:22
+  [sshexec] cmd : sync
+
+
+
+  FROM WALLACE
+
+  Buildfile: C:\Wildstang\PowerUpWorkspace\2018_Robot_Deploy\build.xml
+Trying to override old definition of task classloader
+get-target-ip:
+     [echo] Finding roboRIO...
+[find-roborio] could not resolve roboRIO-111-FRC.frc-field.local
+[find-roborio] could not resolve roboRIO-111-FRC.lan
+[find-roborio] trying 172.22.11.2
+[find-roborio] trying 10.1.11.2
+[find-roborio] could not get IP from DS
+     [echo] roboRIO found at 172.22.11.2, image FRC_roboRIO_2018_v16
+dependencies:
+     [echo] roboRIO image version validated
+deploy:
+   [webdav] getting http://172.22.11.2/files/usr/local/frc/lib/WPI_Native_Libraries.properties
+     [echo] Deploying libraries
+     [echo]  libcscore.so,libntcore.so,libopencv_calib3d.so.3.2,libopencv_core.so.3.2,libopencv_features2d.so.3.2,libopencv_flann.so.3.2,libopencv_highgui.so.3.2,libopencv_imgcodecs.so.3.2,libopencv_imgproc.so.3.2,libopencv_java320.so,libopencv_ml.so.3.2,libopencv_objdetect.so.3.2,libopencv_photo.so.3.2,libopencv_shape.so.3.2,libopencv_stitching.so.3.2,libopencv_superres.so.3.2,libopencv_video.so.3.2,libopencv_videoio.so.3.2,libopencv_videostab.so.3.2,libwpiHal.so,libwpilibc.so,libwpiutil.so
+   [webdav] putting C:\Users\Wallace\wpilib\common\current\lib\linux\athena\shared\libcscore.so to http://172.22.11.2/files/tmp/libcscore.so
+   [webdav] putting C:\Users\Wallace\wpilib\common\current\lib\linux\athena\shared\libntcore.so to http://172.22.11.2/files/tmp/libntcore.so
+   [webdav] putting C:\Users\Wallace\wpilib\common\current\lib\linux\athena\shared\libopencv_calib3d.so.3.2 to http://172.22.11.2/files/tmp/libopencv_calib3d.so.3.2
+   [webdav] putting C:\Users\Wallace\wpilib\common\current\lib\linux\athena\shared\libopencv_core.so.3.2 to http://172.22.11.2/files/tmp/libopencv_core.so.3.2
+   [webdav] putting C:\Users\Wallace\wpilib\common\current\lib\linux\athena\shared\libopencv_features2d.so.3.2 to http://172.22.11.2/files/tmp/libopencv_features2d.so.3.2
+   [webdav] putting C:\Users\Wallace\wpilib\common\current\lib\linux\athena\shared\libopencv_flann.so.3.2 to http://172.22.11.2/files/tmp/libopencv_flann.so.3.2
+   [webdav] putting C:\Users\Wallace\wpilib\common\current\lib\linux\athena\shared\libopencv_highgui.so.3.2 to http://172.22.11.2/files/tmp/libopencv_highgui.so.3.2
+   [webdav] putting C:\Users\Wallace\wpilib\common\current\lib\linux\athena\shared\libopencv_imgcodecs.so.3.2 to http://172.22.11.2/files/tmp/libopencv_imgcodecs.so.3.2
+   [webdav] putting C:\Users\Wallace\wpilib\common\current\lib\linux\athena\shared\libopencv_imgproc.so.3.2 to http://172.22.11.2/files/tmp/libopencv_imgproc.so.3.2
+   [webdav] putting C:\Users\Wallace\wpilib\common\current\lib\linux\athena\shared\libopencv_java320.so to http://172.22.11.2/files/tmp/libopencv_java320.so
+   [webdav] putting C:\Users\Wallace\wpilib\common\current\lib\linux\athena\shared\libopencv_ml.so.3.2 to http://172.22.11.2/files/tmp/libopencv_ml.so.3.2
+   [webdav] putting C:\Users\Wallace\wpilib\common\current\lib\linux\athena\shared\libopencv_objdetect.so.3.2 to http://172.22.11.2/files/tmp/libopencv_objdetect.so.3.2
+   [webdav] putting C:\Users\Wallace\wpilib\common\current\lib\linux\athena\shared\libopencv_photo.so.3.2 to http://172.22.11.2/files/tmp/libopencv_photo.so.3.2
+   [webdav] putting C:\Users\Wallace\wpilib\common\current\lib\linux\athena\shared\libopencv_shape.so.3.2 to http://172.22.11.2/files/tmp/libopencv_shape.so.3.2
+   [webdav] putting C:\Users\Wallace\wpilib\common\current\lib\linux\athena\shared\libopencv_stitching.so.3.2 to http://172.22.11.2/files/tmp/libopencv_stitching.so.3.2
+   [webdav] putting C:\Users\Wallace\wpilib\common\current\lib\linux\athena\shared\libopencv_superres.so.3.2 to http://172.22.11.2/files/tmp/libopencv_superres.so.3.2
+   [webdav] putting C:\Users\Wallace\wpilib\common\current\lib\linux\athena\shared\libopencv_video.so.3.2 to http://172.22.11.2/files/tmp/libopencv_video.so.3.2
+   [webdav] putting C:\Users\Wallace\wpilib\common\current\lib\linux\athena\shared\libopencv_videoio.so.3.2 to http://172.22.11.2/files/tmp/libopencv_videoio.so.3.2
+   [webdav] putting C:\Users\Wallace\wpilib\common\current\lib\linux\athena\shared\libopencv_videostab.so.3.2 to http://172.22.11.2/files/tmp/libopencv_videostab.so.3.2
+   [webdav] putting C:\Users\Wallace\wpilib\common\current\lib\linux\athena\shared\libwpiHal.so to http://172.22.11.2/files/tmp/libwpiHal.so
+   [webdav] putting C:\Users\Wallace\wpilib\common\current\lib\linux\athena\shared\libwpilibc.so to http://172.22.11.2/files/tmp/libwpilibc.so
+   [webdav] putting C:\Users\Wallace\wpilib\common\current\lib\linux\athena\shared\libwpiutil.so to http://172.22.11.2/files/tmp/libwpiutil.so
+   [webdav] putting C:\Users\Wallace\wpilib\common\current\lib\linux\athena\shared\WPI_Native_Libraries.properties to http://172.22.11.2/files/tmp/WPI_Native_Libraries.properties
+  [sshexec] Connecting to 172.22.11.2:22
+  [sshexec] cmd : sed -i -e 's/^StartupDLLs/;StartupDLLs/' /etc/natinst/share/ni-rt.ini; chmod +x /tmp/libcscore.so /tmp/libntcore.so /tmp/libopencv_calib3d.so.3.2 /tmp/libopencv_core.so.3.2 /tmp/libopencv_features2d.so.3.2 /tmp/libopencv_flann.so.3.2 /tmp/libopencv_highgui.so.3.2 /tmp/libopencv_imgcodecs.so.3.2 /tmp/libopencv_imgproc.so.3.2 /tmp/libopencv_java320.so /tmp/libopencv_ml.so.3.2 /tmp/libopencv_objdetect.so.3.2 /tmp/libopencv_photo.so.3.2 /tmp/libopencv_shape.so.3.2 /tmp/libopencv_stitching.so.3.2 /tmp/libopencv_superres.so.3.2 /tmp/libopencv_video.so.3.2 /tmp/libopencv_videoio.so.3.2 /tmp/libopencv_videostab.so.3.2 /tmp/libwpiHal.so /tmp/libwpilibc.so /tmp/libwpiutil.so && mv /tmp/libcscore.so /tmp/libntcore.so /tmp/libopencv_calib3d.so.3.2 /tmp/libopencv_core.so.3.2 /tmp/libopencv_features2d.so.3.2 /tmp/libopencv_flann.so.3.2 /tmp/libopencv_highgui.so.3.2 /tmp/libopencv_imgcodecs.so.3.2 /tmp/libopencv_imgproc.so.3.2 /tmp/libopencv_java320.so /tmp/libopencv_ml.so.3.2 /tmp/libopencv_objdetect.so.3.2 /tmp/libopencv_photo.so.3.2 /tmp/libopencv_shape.so.3.2 /tmp/libopencv_stitching.so.3.2 /tmp/libopencv_superres.so.3.2 /tmp/libopencv_video.so.3.2 /tmp/libopencv_videoio.so.3.2 /tmp/libopencv_videostab.so.3.2 /tmp/libwpiHal.so /tmp/libwpilibc.so /tmp/libwpiutil.so /tmp/WPI_Native_Libraries.properties /usr/local/frc/lib && ldconfig
+   [webdav] getting http://172.22.11.2/files/usr/local/frc/lib/User_Libraries.properties
+  [sshexec] Connecting to 172.22.11.2:22
+  [sshexec] cmd : rm -f /home/lvuser/FRCUserProgram
+     [echo] [athena-deploy] Copying code over.
+   [webdav] deleting http://172.22.11.2/files/home/lvuser/FRCUserProgram
+   [webdav] putting C:\Wildstang\PowerUpWorkspace\2018_Robot_Deploy\Debug\FRCUserProgram to http://172.22.11.2/files/home/lvuser/FRCUserProgram
+   [webdav] deleting http://172.22.11.2/files/home/lvuser/robotCommand
+   [webdav] putting C:\Users\Wallace\wpilib\cpp\current\ant\robotCommand to http://172.22.11.2/files/home/lvuser/robotCommand
+     [echo] [athena-deploy] Starting program.
+  [sshexec] Connecting to 172.22.11.2:22
+  [sshexec] cmd : . /etc/profile.d/natinst-path.sh; chown lvuser /home/lvuser/FRCUserProgram; setcap 'cap_sys_nice=pe' /home/lvuser/FRCUserProgram; chmod a+x /home/lvuser/FRCUserProgram; /usr/local/frc/bin/frcKillRobot.sh -t -r; sync
+BUILD SUCCESSFUL
+Total time: 14 seconds
+
+
+// Wallace build Feb 14 2018
+
+
+********** Robot program starting **********
+
+********** Robot program starting **********
+
+********** Robot program starting **********
+
+********** Robot program starting **********
+
+********** Robot program starting **********
+
+********** Robot program starting **********
+
+********** Robot program starting **********
+
+********** Robot program starting **********
+LOG_ERROR:: [1269990512] ##  ## int AutoManager::loadProgramsFromDirectory(std::__cxx11::string) ## 683872 ## auto program directory not found auto_progs
+WsRobot constructor
+LOG_WARNING:: [1269990514] ##  ## void WildstangModule::addChild(WildstangModule*) ## 692052 ## WildstangModule subsystems already has a child named lift
+LOG_INFO:: [1269990523] ##  ## void WsNetServer::__run() ## 689268 ## Waiting for connection (1112)
+LOG_ERROR:: [1269990524] ##  ## char* getFileContentsBinary(std::__cxx11::string, long int*) ## 692992 ## could not open the file /home/lvuser/robot_competition.json
+LOG_INFO:: [1269990525] ##  ## void Input::instantiateInput() ## 699124 ## instantiating input anti_turbo
+LOG_INFO:: [1269990524] ##  ## void WsNetServer::__run() ## 689268 ## Waiting for connection (1113)
+LOG_INFO:: [1269990525] ##  ## void Input::instantiateInput() ## 699124 ## instantiating input arm_down_button
+LOG_INFO:: [1269990526] ##  ## void Input::instantiateInput() ## 699124 ## instantiating input arm_joy
+LOG_INFO:: [1269990526] ##  ## void Input::instantiateInput() ## 699124 ## instantiating input arm_motor_victor_current
+LOG_INFO:: [1269990527] ##  ## void Input::instantiateInput() ## 699124 ## instantiating input arm_motor_victor_voltage
+LOG_INFO:: [1269990528] ##  ## void Input::instantiateInput() ## 699124 ## instantiating input arm_pot
+LOG_INFO:: [1269990524] ##  ## void WsNetServer::__run() ## 689268 ## Waiting for connection (1111)
+LOG_INFO:: [1269990524] ##  ## void WsNetServer::__run() ## 689268 ## Waiting for connection (5800)
+LOG_INFO:: [1269990538] ##  ## void Input::instantiateInput() ## 699124 ## instantiating input arm_up_button
+LOG_INFO:: [1269990539] ##  ## void Input::instantiateInput() ## 699124 ## instantiating input gyro
+ERROR  -1029  HAL: Resource already allocated, Minimum Value: 0, MaximumValue: 8, Requested Value: 0  AnalogInput [AnalogInput.cpp:41]
+	at frc::AnalogInput::AnalogInput(int)
+	at frc::AnalogGyro::AnalogGyro(int)
+	at WsAnalogGyro::instantiate()
+	at Input::instantiateInput()
+	at InputManager::init()
+	at RobotCore::initialize()
+	at WsIterativeRobot<WsRobot>::WsIterativeRobot()
+	at main
+	at __libc_start_main
+
+Error at AnalogInput [AnalogInput.cpp:41]: HAL: Resource already allocated, Minimum Value: 0, MaximumValue: 8, Requested Value: 0
+	at frc::AnalogInput::AnalogInput(int)
+	at frc::AnalogGyro::AnalogGyro(int)
+	at WsAnalogGyro::instantiate()
+	at Input::instantiateInput()
+	at InputManager::init()
+	at RobotCore::initialize()
+	at WsIterativeRobot<WsRobot>::WsIterativeRobot()
+	at main
+	at __libc_start_main
+
+ERROR  -1098  HAL: A handle parameter was passed incorrectly  InitGyro [AnalogGyro.cpp:150]
+	at frc::AnalogGyro::InitGyro()
+	at frc::AnalogGyro::AnalogGyro(std::shared_ptr<frc::AnalogInput>)
+	at frc::AnalogGyro::AnalogGyro(int)
+	at WsAnalogGyro::instantiate()
+	at Input::instantiateInput()
+	at InputManager::init()
+	at RobotCore::initialize()
+	at WsIterativeRobot<WsRobot>::WsIterativeRobot()
+	at main
+	at __libc_start_main
+
+Error at InitGyro [AnalogGyro.cpp:150]: HAL: A handle parameter was passed incorrectly
+	at frc::AnalogGyro::InitGyro()
+	at frc::AnalogGyro::AnalogGyro(std::shared_ptr<frc::AnalogInput>)
+	at frc::AnalogGyro::AnalogGyro(int)
+	at WsAnalogGyro::instantiate()
+	at Input::instantiateInput()
+	at InputManager::init()
+	at RobotCore::initialize()
+	at WsIterativeRobot<WsRobot>::WsIterativeRobot()
+	at main
+	at __libc_start_main
+
+LOG_INFO:: [1269990565] ##  ## void Input::instantiateInput() ## 699124 ## instantiating input heading
+LOG_INFO:: [1269990566] ##  ## void Input::instantiateInput() ## 699124 ## instantiating input left_follower_one_current
+LOG_INFO:: [1269990567] ##  ## void Input::instantiateInput() ## 699124 ## instantiating input left_follower_one_voltage
+LOG_INFO:: [1269990567] ##  ## void Input::instantiateInput() ## 699124 ## instantiating input left_follower_two_current
+LOG_INFO:: [1269990568] ##  ## void Input::instantiateInput() ## 699124 ## instantiating input left_follower_two_voltage
+LOG_INFO:: [1269990568] ##  ## void Input::instantiateInput() ## 699124 ## instantiating input left_master_current
+LOG_INFO:: [1269990569] ##  ## void Input::instantiateInput() ## 699124 ## instantiating input left_master_sensor
+LOG_INFO:: [1269990570] ##  ## void Input::instantiateInput() ## 699124 ## instantiating input left_master_voltage
+LOG_INFO:: [1269990571] ##  ## void Input::instantiateInput() ## 699124 ## instantiating input lift_follower_current
+LOG_INFO:: [1269990572] ##  ## void Input::instantiateInput() ## 699124 ## instantiating input lift_follower_voltage
+LOG_INFO:: [1269990574] ##  ## void Input::instantiateInput() ## 699124 ## instantiating input lift_joy
+LOG_INFO:: [1269990577] ##  ## void Input::instantiateInput() ## 699124 ## instantiating input lift_winch_current
+LOG_INFO:: [1269990578] ##  ## void Input::instantiateInput() ## 699124 ## instantiating input lift_winch_sensor
+LOG_INFO:: [1269990578] ##  ## void Input::instantiateInput() ## 699124 ## instantiating input lift_winch_voltage
+LOG_INFO:: [1269990579] ##  ## void Input::instantiateInput() ## 699124 ## instantiating input quick_turn
+LOG_INFO:: [1269990579] ##  ## void Input::instantiateInput() ## 699124 ## instantiating input right_follower_one_current
+LOG_INFO:: [1269990580] ##  ## void Input::instantiateInput() ## 699124 ## instantiating input right_follower_one_voltage
+LOG_INFO:: [1269990581] ##  ## void Input::instantiateInput() ## 699124 ## instantiating input right_follower_two_current
+LOG_INFO:: [1269990581] ##  ## void Input::instantiateInput() ## 699124 ## instantiating input right_follower_two_voltage
+LOG_INFO:: [1269990582] ##  ## void Input::instantiateInput() ## 699124 ## instantiating input right_master_current
+LOG_INFO:: [1269990583] ##  ## void Input::instantiateInput() ## 699124 ## instantiating input right_master_sensor
+LOG_INFO:: [1269990584] ##  ## void Input::instantiateInput() ## 699124 ## instantiating input right_master_voltage
+LOG_INFO:: [1269990584] ##  ## void Input::instantiateInput() ## 699124 ## instantiating input throttle
+LOG_INFO:: [1269990585] ##  ## void Input::instantiateInput() ## 699124 ## instantiating input to_pickup_height
+LOG_INFO:: [1269990586] ##  ## void Input::instantiateInput() ## 699124 ## instantiating input to_scale_height
+LOG_INFO:: [1269990586] ##  ## void Input::instantiateInput() ## 699124 ## instantiating input to_switch_height
+LOG_INFO:: [1269990587] ##  ## void Output::instantiateOutput() ## 700424 ## instantiating output arm_motor
+LOG_INFO:: [1269990587] ##  ## void Output::instantiateOutput() ## 700424 ## instantiating output arm_motor_victor
+ERROR  -200  CTR: No new response to update signal  Victor SPX 0 ConfigNominalOutputForward
+	at WsCanVictor::configureOutputLevels()
+	at WsCanVictor::instantiate()
+	at Output::instantiateOutput()
+	at OutputManager::init()
+	at RobotCore::initialize()
+	at WsIterativeRobot<WsRobot>::WsIterativeRobot()
+	at main
+	at __libc_start_main
+
+ERROR  -200  CTR: No new response to update signal  Victor SPX 0 ConfigNominalOutputReverse
+	at WsCanVictor::configureOutputLevels()
+	at WsCanVictor::instantiate()
+	at Output::instantiateOutput()
+	at OutputManager::init()
+	at RobotCore::initialize()
+	at WsIterativeRobot<WsRobot>::WsIterativeRobot()
+	at main
+	at __libc_start_main
+
+ERROR  -200  CTR: No new response to update signal  Victor SPX 0 ConfigPeakOutputForward
+	at WsCanVictor::configureOutputLevels()
+	at WsCanVictor::instantiate()
+	at Output::instantiateOutput()
+	at OutputManager::init()
+	at RobotCore::initialize()
+	at WsIterativeRobot<WsRobot>::WsIterativeRobot()
+	at main
+	at __libc_start_main
+
+ERROR  -200  CTR: No new response to update signal  Victor SPX 0 ConfigPeakOutputReverse
+	at WsCanVictor::configureOutputLevels()
+	at WsCanVictor::instantiate()
+	at Output::instantiateOutput()
+	at OutputManager::init()
+	at RobotCore::initialize()
+	at WsIterativeRobot<WsRobot>::WsIterativeRobot()
+	at main
+	at __libc_start_main
+
+LOG_INFO:: [1269990877] ##  ## void Output::instantiateOutput() ## 700424 ## instantiating output arm_smart
+LOG_INFO:: [1269990878] ##  ## void Output::instantiateOutput() ## 700424 ## instantiating output left_follower_one
+ERROR  -200  CTR: No new response to update signal  Talon SRX 0 Config_kP
+	at WsCanTalon::setPidConstants()
+	at WsCanTalon::instantiate()
+	at Output::instantiateOutput()
+	at OutputManager::init()
+	at RobotCore::initialize()
+	at WsIterativeRobot<WsRobot>::WsIterativeRobot()
+	at main
+	at __libc_start_main
+
+ERROR  -200  CTR: No new response to update signal  Talon SRX 0 Config_kI
+	at WsCanTalon::setPidConstants()
+	at WsCanTalon::instantiate()
+	at Output::instantiateOutput()
+	at OutputManager::init()
+	at RobotCore::initialize()
+	at WsIterativeRobot<WsRobot>::WsIterativeRobot()
+	at main
+	at __libc_start_main
+
+ERROR  -200  CTR: No new response to update signal  Talon SRX 0 Config_kD
+	at WsCanTalon::setPidConstants()
+	at WsCanTalon::instantiate()
+	at Output::instantiateOutput()
+	at OutputManager::init()
+	at RobotCore::initialize()
+	at WsIterativeRobot<WsRobot>::WsIterativeRobot()
+	at main
+	at __libc_start_main
+
+ERROR  -200  CTR: No new response to update signal  Talon SRX 0 Config_kF
+	at WsCanTalon::setPidConstants()
+	at WsCanTalon::instantiate()
+	at Output::instantiateOutput()
+	at OutputManager::init()
+	at RobotCore::initialize()
+	at WsIterativeRobot<WsRobot>::WsIterativeRobot()
+	at main
+	at __libc_start_main
+
+ERROR  -200  CTR: No new response to update signal  Talon SRX 0 ConfigNominalOutputForward
+	at WsCanTalon::configureOutputLevels()
+	at WsCanTalon::instantiate()
+	at Output::instantiateOutput()
+	at OutputManager::init()
+	at RobotCore::initialize()
+	at WsIterativeRobot<WsRobot>::WsIterativeRobot()
+	at main
+	at __libc_start_main
+
+ERROR  -200  CTR: No new response to update signal  Talon SRX 0 ConfigNominalOutputReverse
+	at WsCanTalon::configureOutputLevels()
+	at WsCanTalon::instantiate()
+	at Output::instantiateOutput()
+	at OutputManager::init()
+	at RobotCore::initialize()
+	at WsIterativeRobot<WsRobot>::WsIterativeRobot()
+	at main
+	at __libc_start_main
+
+ERROR  -200  CTR: No new response to update signal  Talon SRX 0 ConfigPeakOutputForward
+	at WsCanTalon::configureOutputLevels()
+	at WsCanTalon::instantiate()
+	at Output::instantiateOutput()
+	at OutputManager::init()
+	at RobotCore::initialize()
+	at WsIterativeRobot<WsRobot>::WsIterativeRobot()
+	at main
+	at __libc_start_main
+
+ERROR  -200  CTR: No new response to update signal  Talon SRX 0 ConfigPeakOutputReverse
+	at WsCanTalon::configureOutputLevels()
+	at WsCanTalon::instantiate()
+	at Output::instantiateOutput()
+	at OutputManager::init()
+	at RobotCore::initialize()
+	at WsIterativeRobot<WsRobot>::WsIterativeRobot()
+	at main
+	at __libc_start_main
+
+LOG_INFO:: [1269991418] ##  ## void Output::instantiateOutput() ## 700424 ## instantiating output left_follower_two
+LOG_INFO:: [1269991945] ##  ## void Output::instantiateOutput() ## 700424 ## instantiating output left_master
+ERROR  -200  CTR: No new response to update signal  Talon SRX 0 ConfigSelectedFeedbackSensor
+	at WsCanTalonCtreMagEncoder::instantiate()
+	at Output::instantiateOutput()
+	at OutputManager::init()
+	at RobotCore::initialize()
+	at WsIterativeRobot<WsRobot>::WsIterativeRobot()
+	at main
+	at __libc_start_main
+
+ERROR  -200  CTR: No new response to update signal  Talon SRX 0 SetStatusFramePeriod
+	at WsCanTalonCtreMagEncoder::instantiate()
+	at Output::instantiateOutput()
+	at OutputManager::init()
+	at RobotCore::initialize()
+	at WsIterativeRobot<WsRobot>::WsIterativeRobot()
+	at main
+	at __libc_start_main
+
+LOG_INFO:: [1269992604] ##  ## void Output::instantiateOutput() ## 700424 ## instantiating output lift_follower
+LOG_INFO:: [1269993131] ##  ## void Output::instantiateOutput() ## 700424 ## instantiating output lift_winch
+WARNING  0  [Phoenix] Initialization is complete.
+LOG_INFO:: [1269993793] ##  ## void Output::instantiateOutput() ## 700424 ## instantiating output right_follower_one
+LOG_INFO:: [1269994320] ##  ## void Output::instantiateOutput() ## 700424 ## instantiating output right_follower_two
+ERROR  -200  CTR: No new response to update signal  Talon SRX 0 Config_kP
+	at WsCanTalon::setPidConstants()
+	at WsCanTalon::instantiate()
+	at Output::instantiateOutput()
+	at OutputManager::init()
+	at RobotCore::initialize()
+	at WsIterativeRobot<WsRobot>::WsIterativeRobot()
+	at main
+	at __libc_start_main
+
+ERROR  -200  CTR: No new response to update signal  Talon SRX 0 Config_kI
+	at WsCanTalon::setPidConstants()
+	at WsCanTalon::instantiate()
+	at Output::instantiateOutput()
+	at OutputManager::init()
+	at RobotCore::initialize()
+	at WsIterativeRobot<WsRobot>::WsIterativeRobot()
+	at main
+	at __libc_start_main
+
+ERROR  -200  CTR: No new response to update signal  Talon SRX 0 Config_kD
+	at WsCanTalon::setPidConstants()
+	at WsCanTalon::instantiate()
+	at Output::instantiateOutput()
+	at OutputManager::init()
+	at RobotCore::initialize()
+	at WsIterativeRobot<WsRobot>::WsIterativeRobot()
+	at main
+	at __libc_start_main
+
+ERROR  -200  CTR: No new response to update signal  Talon SRX 0 Config_kF
+	at WsCanTalon::setPidConstants()
+	at WsCanTalon::instantiate()
+	at Output::instantiateOutput()
+	at OutputManager::init()
+	at RobotCore::initialize()
+	at WsIterativeRobot<WsRobot>::WsIterativeRobot()
+	at main
+	at __libc_start_main
+
+ERROR  -200  CTR: No new response to update signal  Talon SRX 0 ConfigNominalOutputForward
+	at WsCanTalon::configureOutputLevels()
+	at WsCanTalon::instantiate()
+	at Output::instantiateOutput()
+	at OutputManager::init()
+	at RobotCore::initialize()
+	at WsIterativeRobot<WsRobot>::WsIterativeRobot()
+	at main
+	at __libc_start_main
+
+ERROR  -200  CTR: No new response to update signal  Talon SRX 0 ConfigNominalOutputReverse
+	at WsCanTalon::configureOutputLevels()
+	at WsCanTalon::instantiate()
+	at Output::instantiateOutput()
+	at OutputManager::init()
+	at RobotCore::initialize()
+	at WsIterativeRobot<WsRobot>::WsIterativeRobot()
+	at main
+	at __libc_start_main
+
+ERROR  -200  CTR: No new response to update signal  Talon SRX 0 ConfigPeakOutputForward
+	at WsCanTalon::configureOutputLevels()
+	at WsCanTalon::instantiate()
+	at Output::instantiateOutput()
+	at OutputManager::init()
+	at RobotCore::initialize()
+	at WsIterativeRobot<WsRobot>::WsIterativeRobot()
+	at main
+	at __libc_start_main
+
+ERROR  -200  CTR: No new response to update signal  Talon SRX 0 ConfigPeakOutputReverse
+	at WsCanTalon::configureOutputLevels()
+	at WsCanTalon::instantiate()
+	at Output::instantiateOutput()
+	at OutputManager::init()
+	at RobotCore::initialize()
+	at WsIterativeRobot<WsRobot>::WsIterativeRobot()
+	at main
+	at __libc_start_main
+
+LOG_INFO:: [1269994857] ##  ## void Output::instantiateOutput() ## 700424 ## instantiating output right_master
+LOG_INFO:: [1269995528] ##  ## void SubsystemManager::init() ## 716160 ## Initializing Subsystem: drive
+LOG_INFO:: [1269995529] ##  ## void SubsystemManager::init() ## 716160 ## Initializing Subsystem: arm
+LOG_INFO:: [1269995529] ##  ## void SubsystemManager::init() ## 716160 ## Initializing Subsystem: lift
+LOG_INFO:: [1269995529] ##  ## void SubsystemManager::init() ## 716160 ## Initializing Subsystem: monitor
+LOG_INFO:: [1269995529] ##  ## void SubsystemManager::init() ## 716160 ## Initializing Subsystem: test
+LOG_INFO:: [1269995529] ##  ## void SubsystemManager::init() ## 716160 ## Initializing Subsystem: lift
+LOG_INFO:: [1269995529] ##  ## void WsIterativeRobot<T>::RobotInit() [with T = WsRobot] ## 712076 ## void WsIterativeRobot<T>::RobotInit() [with T = WsRobot] run time 0.000035
+LOG_INFO:: [1269995533] ##  ## void WsIterativeRobot<T>::DisabledInit() [with T = WsRobot] ## 712076 ## void WsIterativeRobot<T>::DisabledInit() [with T = WsRobot] run time 0.000110
+LOG_INFO:: [1269995540] ##  ## void WsIterativeRobot<T>::DisabledPeriodic() [with T = WsRobot] ## 712076 ## void WsIterativeRobot<T>::DisabledPeriodic() [with T = WsRobot] run time 0.000005
+WARNING  1  Joystick Button missing, check if all controllers are plugged in
+Joystick Button missing, check if all controllers are plugged in
+ERROR  -3  CTR: CAN frame not received/too-stale.  Victor SPX 0 GetOutputCurrent
+	at ctre::phoenix::motorcontrol::can::BaseMotorController::GetOutputCurrent()
+	at WsCanVictor::getOutputCurrent()
+	at WsPhoenixCurrent::readRawValue()
+	at InputTemplate<double>::readDataFromInput()
+	at Input::update()
+	at InputManager::update()
+	at RobotCore::executeUpdate()
+	at WsIterativeRobot<WsRobot>::DisabledPeriodic()
+	at frc::IterativeRobotBase::LoopFunc()
+	at frc::IterativeRobot::StartCompetition()
+	at main
+	at __libc_start_main
+
+ERROR  -3  CTR: CAN frame not received/too-stale.  Victor SPX 0 GetBusVoltage
+	at ctre::phoenix::motorcontrol::can::BaseMotorController::GetBusVoltage()
+	at ctre::phoenix::motorcontrol::can::BaseMotorController::GetMotorOutputVoltage()
+	at WsCanVictor::getOutputVoltage()
+	at WsPhoenixVoltage::readRawValue()
+	at InputTemplate<double>::readDataFromInput()
+	at Input::update()
+	at InputManager::update()
+	at RobotCore::executeUpdate()
+	at WsIterativeRobot<WsRobot>::DisabledPeriodic()
+	at frc::IterativeRobotBase::LoopFunc()
+	at frc::IterativeRobot::StartCompetition()
+	at main
+	at __libc_start_main
+
+ERROR  -3  CTR: CAN frame not received/too-stale.  Victor SPX 0 GetMotorOutputPercent
+	at ctre::phoenix::motorcontrol::can::BaseMotorController::GetMotorOutputPercent()
+	at ctre::phoenix::motorcontrol::can::BaseMotorController::GetMotorOutputVoltage()
+	at WsCanVictor::getOutputVoltage()
+	at WsPhoenixVoltage::readRawValue()
+	at InputTemplate<double>::readDataFromInput()
+	at Input::update()
+	at InputManager::update()
+	at RobotCore::executeUpdate()
+	at WsIterativeRobot<WsRobot>::DisabledPeriodic()
+	at frc::IterativeRobotBase::LoopFunc()
+	at frc::IterativeRobot::StartCompetition()
+	at main
+	at __libc_start_main
+
+ERROR  -3  CTR: CAN frame not received/too-stale.  Talon SRX 0 GetOutputCurrent
+	at ctre::phoenix::motorcontrol::can::BaseMotorController::GetOutputCurrent()
+	at WsCanTalon::getOutputCurrent()
+	at WsPhoenixCurrent::readRawValue()
+	at InputTemplate<double>::readDataFromInput()
+	at Input::update()
+	at InputManager::update()
+	at RobotCore::executeUpdate()
+	at WsIterativeRobot<WsRobot>::DisabledPeriodic()
+	at frc::IterativeRobotBase::LoopFunc()
+	at frc::IterativeRobot::StartCompetition()
+	at main
+	at __libc_start_main
+
+ERROR  -3  CTR: CAN frame not received/too-stale.  Talon SRX 0 GetBusVoltage
+	at ctre::phoenix::motorcontrol::can::BaseMotorController::GetBusVoltage()
+	at ctre::phoenix::motorcontrol::can::BaseMotorController::GetMotorOutputVoltage()
+	at WsCanTalon::getOutputVoltage()
+	at WsPhoenixVoltage::readRawValue()
+	at InputTemplate<double>::readDataFromInput()
+	at Input::update()
+	at InputManager::update()
+	at RobotCore::executeUpdate()
+	at WsIterativeRobot<WsRobot>::DisabledPeriodic()
+	at frc::IterativeRobotBase::LoopFunc()
+	at frc::IterativeRobot::StartCompetition()
+	at main
+	at __libc_start_main
+
+ERROR  -3  CTR: CAN frame not received/too-stale.  Talon SRX 0 GetMotorOutputPercent
+	at ctre::phoenix::motorcontrol::can::BaseMotorController::GetMotorOutputPercent()
+	at ctre::phoenix::motorcontrol::can::BaseMotorController::GetMotorOutputVoltage()
+	at WsCanTalon::getOutputVoltage()
+	at WsPhoenixVoltage::readRawValue()
+	at InputTemplate<double>::readDataFromInput()
+	at Input::update()
+	at InputManager::update()
+	at RobotCore::executeUpdate()
+	at WsIterativeRobot<WsRobot>::DisabledPeriodic()
+	at frc::IterativeRobotBase::LoopFunc()
+	at frc::IterativeRobot::StartCompetition()
+	at main
+	at __libc_start_main
+
+[31mCRASHED, caught sig 11[0m
+/home/lvuser/FRCUserProgram(_Z5ws_btv+0x14) [0x6833c]
+/home/lvuser/FRCUserProgram(_Z12ws_backtracei+0x18) [0x864bc]
+/lib/libc.so.6(__default_sa_restorer+0) [0xb688fad0]

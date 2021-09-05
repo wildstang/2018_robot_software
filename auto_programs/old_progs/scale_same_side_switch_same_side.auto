@@ -1,0 +1,47 @@
+LiftStep position( &auto_lift_pos_carry );
+ArmStep position( &auto_arm_pos_carry );
+ClawStep position( &auto_claw_pos_closed ) direction( &auto_claw_direction_neutral );
+
+DriveStraightStep speed( 0.95 ) inches( 240 ) timeout( -1.0 );
+DriveTurnStep speed( 1.0 ) angle( 50 ) timeout( 2.0 );
+LiftStep position( &auto_lift_pos_scale_plus_one );
+AutoStepDelay milliseconds( 1200 );
+ArmStep position( &auto_arm_pos_score_scale );
+DriveStraightStep speed( 0.65 ) inches( 20 ) timeout( 1.0 );
+
+ClawStep position( &auto_claw_pos_open ) direction( &auto_claw_direction_neutral );
+AutoStepDelay milliseconds( 300 );
+ClawStep direction( &auto_claw_direction_neutral ) position( &auto_claw_pos_ragdoll );
+
+LiftStep position( &auto_lift_pos_carry );
+ArmStep position( &auto_arm_pos_carry );
+DriveStraightStep speed( 0.75 ) inches( -20 ) timeout( 1.5 );
+
+DriveTurnStep speed( 1.0 ) angle( 98 ) timeout( 3.0 );
+
+LiftStep position( &auto_lift_pos_intake );
+ArmStep position( &auto_arm_pos_intake );
+
+@AutoParallelStepGroup {
+    @AutoParallelShortStepGroup {
+        IntakeCubeStep;
+        AutoStepDelay milliseconds( 1000 );
+    }
+
+    DriveStraightStep inches( 60 ) speed( 0.45 ) timeout( 3.0 );
+}
+
+AutoStepStopAutonomous;
+
+LiftStep position( &auto_lift_pos_switch );
+AutoStepDelay milliseconds( 100 );
+ArmStep position( &auto_arm_pos_score_switch );
+
+DriveTurnStep angle( 20 ) speed( 0.9 ) timeout( 1.0 );
+
+ClawStep position( &auto_claw_pos_closed ) direction( &auto_claw_direction_rev_slowest );
+AutoStepDelay milliseconds( 300 );
+ClawStep direction( &auto_claw_direction_neutral ) position( &auto_claw_pos_ragdoll );
+
+AutoStepStopAutonomous;
+
